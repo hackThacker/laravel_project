@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -64,3 +65,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+=======
+# laravel_project
+An admin dashboard built with Laravel for managing a news portal. Features include article creation, editing, and deletion, category management, user role management, media uploads, and comment moderation. The responsive design ensures accessibility across devices, providing a streamlined interface for efficient news management.
+>>>>>>> dbf8f10a04e5b2f45b1dd0307c3a94848afa857d
