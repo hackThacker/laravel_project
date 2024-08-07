@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Categorycontroller;
 use App\Http\Controllers\Admin\CompanyController as AdminCompanyController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('/company', AdminCompanyController::class)->names('company');
-
+    Route::resource('/category', Categorycontroller::class)->names('category');
 });
 
 require __DIR__.'/auth.php';
