@@ -10,6 +10,9 @@
         <a href="{{route('dashboard')}}" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
       </li>
       <li class="dropdown ">
-        <a href="{{route('company.index')}}" class="nav-link"><i data-feather="monitor"></i><span>Company</span></a>
+        <a href="{{route('company.index')}}" class="nav-link"><i data-feather="settings"></i><span>Company</span></a>
+      </li>
+      <li class="dropdown ">
+        <a href="{{route('category.index')}}" class="nav-link"><i data-feather="settings"></i><span>Category</span></a>
       </li>
   </aside>
