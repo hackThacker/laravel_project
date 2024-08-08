@@ -14,9 +14,9 @@
                             <div class="py-3 col-12">
                                 <label for="categories">Select Category <span class="text-danger">*</span></label>
                                 <select name="categories[]" id="categories" multiple class="form-control select2">
-@foreach ($categories as $category)
-<option value="{{$category->id}}">{{$category->title}}</option>
-@endforeach
+                                    @foreach ($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->title}}</option>
+                                    @endforeach
                                 </select>
                                 @error('categories')
                                 <div class="text-danger">{{ $message }}</div>

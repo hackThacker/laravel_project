@@ -12,7 +12,21 @@
                         @csrf
                         @method('put')
                         <div class="row py-6">
-                            <div class="py-3 col-6">
+                            <div class="py-3 col-12">
+                                <label for="categories">Select Category <span class="text-danger">*</span></label>
+                                <select name="categories[]" id="categories" multiple class="form-control select2">
+                                    @foreach ($categories as $category)
+                                    <option value="{{$category->id}}"@foreach ($post->categories as $cat)
+{{$cat->id == $category->id ? 'selected' : ''}}
+                                    @endforeach>{{$category->title}}</option>
+                                    @endforeach
+                                </select>
+                                @error('categories')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="py-3 col-12">
                                 <label for="title">Title</label>
                                 <input type="text" id="title" name="title" class="form-control"
                                     placeholder="Enter company name" value="{{ $post->title }}">
@@ -20,15 +34,7 @@
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="py-3 col-6">
-                                <label for="number">Company Number</label>
-                                <input type="number" id="number" name="number" class="form-control"
-                                    placeholder="Enter company number" value="{{ $post->number }}">
-                                @error('number')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="py-3 col-6">
+                            <div class="py-3 col-12">
                                 <label for="description">Description<span class="text-danger">*</span></label>
                                 <textarea name="description" id="description" cols="30" rows="10"
                                     class="form-control summernote"> {{ $post->description }}</textarea>
@@ -36,14 +42,15 @@
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="py-3 col-6">
-                                <label for="images">images<span class="text-danger">*</span></label>
-                                <input type="file" name="images" id="images" class="form-control"
-                                    value="{{ old('images') }}">
+                            <div class="py-3 col-12">
+                                <label for="images">Image <span class="text-danger">*</span></label>
+                                <input type="file" name="images" id="images" class="form-control">
                                 @error('images')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
+                                <img src="{{ asset($post->images) }}" alt="image" width="200">
                             </div>
+
                             </div>
                             <div class="py-3 col-12">
                                 <button type="submit" class="btn btn-success mt-3">Submit</button>
